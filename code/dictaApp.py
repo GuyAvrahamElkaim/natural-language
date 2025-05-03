@@ -9,7 +9,7 @@ def main():
     model.eval()
 
     # 2. Parse the XML file
-    tree = ET.parse('../data/raw/Numbers.xml')  # or 'Deuteronomy.xml', etc.
+    tree = ET.parse('../data/raw/menukad/Numbers.xml')  # or 'Deuteronomy.xml', etc.
     root = tree.getroot()
 
     book_name = 'Numbers'
