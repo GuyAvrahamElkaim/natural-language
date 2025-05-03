@@ -112,5 +112,5 @@ if __name__ == '__main__':
     process_all_books(
         json_files_by_book=json_files,
         source_csv_path='../../torah_full_sources_updated.csv',
-        output_csv_path='../../data/statistics/all_books_word_frequencies.csv'
+        output_csv_path='../../data/statistics/word_frequencies_by_book_and_source.csv'
     )

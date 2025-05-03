@@ -131,7 +131,7 @@ df = pd.DataFrame.from_records(records)
 # -----------------------------------------------------------------
 # 5.  ---- SAVE & PRINT -------------------------------------------
 # -----------------------------------------------------------------
-OUTPUT = "dependenct_type_syntax_according_to_verse_signatures_with_sources.csv"
+OUTPUT = "verse_dependency_signatures_with_sources.csv"
 df.to_csv(OUTPUT, index=False, encoding='utf‑8')
 print(f"✅  Saved {OUTPUT} ({len(df)} rows)")
 

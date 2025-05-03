@@ -153,3 +153,115 @@ The trailing `, J` in this row means the verse is labelled **“J”** in the Do
 
 > **Quick mnemonic**
 > `child:func->head` ⇢ “child token at *child* carries relation *func* to *head*.”
+
+
+### How to read a **taʿam‑signature** line
+
+Example (one verse):
+
+```
+E15(atnachta)[
+    K10(zaqef qatan)[
+        S7(reviii)[T2(azla),T3(munach l’garmeih)],
+        S8(pashta)
+    ],
+    K14(tipcha)[S11(tevir)]
+] | E18(siluq)[K17(tipcha)]
+```
+
+*(The line is normally written without line‑breaks; they are added here only for clarity.)*
+
+---
+
+#### 1 ▪ Rank letters
+
+| Letter | Rank (ETCBC terminology) | Syntactic role                                                           |
+| ------ | ------------------------ | ------------------------------------------------------------------------ |
+| **E**  | **Emperor**              | Major disjunctive (the two halves of the verse)<br>→ `atnachta`, `siluq` |
+| **K**  | **King**                 | Medium disjunctive accents (divide phrases inside each half)             |
+| **S**  | **Second**               | Minor disjunctive / strong conjunctive accents                           |
+| **T**  | **Third**                | Weak conjunctives (rarely needed but included here)                      |
+
+So the signature walks the **four‑rank cantillation tree**: Emperor → King → Second → Third.
+
+---
+
+#### 2 ▪ Index number
+
+Immediately after the rank letter, the **word‑index in the verse** (0‑based) is given:
+
+```
+E15  …  K10  …  S7  …  T2
+```
+
+This guarantees a deterministic order even if two accents share the same rank.
+
+---
+
+#### 3 ▪ Accent name in parentheses
+
+The melodic / syntactic name of the accent at that node:
+
+```
+(atnachta)   (siluq)   (tipcha)   (zaqef qatan)   (reviii)   …
+```
+
+---
+
+#### 4 ▪ Children in brackets
+
+Square brackets `[…]` contain the node’s **immediate children**, separated by commas, **in surface reading order** (lowest index first).
+Nesting therefore shows the entire hierarchy.
+
+---
+
+#### 5 ▪ Top‑level halves separated by `|`
+
+Biblical verses always have **two Emperor groups**:
+
+* **Pre‑atnachta half** – ends at the `atnachta` accent.
+* **Post‑atnachta half** – ends at `siluq` / `sof pasuq`.
+
+The vertical bar `|` divides these two halves in the signature.
+
+---
+
+### Walkthrough of the example
+
+| Part                                      | Meaning                                                                                  |                                                 |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| **`E15(atnachta)`**                       | Major disjunctive at word‑index 15 (the atnachta). It heads the first half of the verse. |                                                 |
+|   `K10(zaqef qatan)`                      | Medium disjunctive accent at word 10 under that emperor.                                 |                                                 |
+|     `S7(reviii)`                          | Minor break at word 7.                                                                   |                                                 |
+|       `T2(azla)` , `T3(munach l’garmeih)` | Two conjunctive accents (weak) attached under the `reviii`.                              |                                                 |
+|     `S8(pashta)`                          | Another second‑rank accent at word 8—same king group, to the right of the `reviii`.      |                                                 |
+|   `K14(tipcha)`                           | Next king (word 14) in the first half.                                                   |                                                 |
+|     `S11(tevir)`                          | Its child second‑rank accent at word 11.                                                 |                                                 |
+| \*\*\`                                    | \`\*\*                                                                                   | End of the atnachta half; begin the siluq half. |
+| **`E18(siluq)`**                          | Emperor accent at word 18—terminates the verse.                                          |                                                 |
+|   `K17(tipcha)`                           | One king under the siluq (word 17). No further children.                                 |                                                 |
+
+Thus anyone familiar with cantillation can reconstruct the **exact tree** of melodic breaks:
+
+```
+(azla  munach) ─ reviii ─┐
+                         ├── zaqef qatan     ─┐
+                 pashta ─┘                   │
+                                           atnachta
+       tevir ─┐                          (major half break)
+              └─ tipcha ─┐
+                         └─ tipcha ─ siluq  (end of verse)
+```
+
+Because the signature encodes **only rank, index, and accent name**, two verses produce **identical strings if and only if they share precisely the same taʿam tree**—independent of the actual Hebrew words.
+
+---
+
+### Quick cheat‑sheet
+
+```
+<RankLetter><Index>(<Accent>)[child1,child2,…]|<Emperor‑2nd‑half>…
+E = Emperor   K = King   S = Second   T = Third
+Indices are 0‑based word positions in the verse.
+Outer '|' splits atnachta‑half vs. siluq‑half.
+```
