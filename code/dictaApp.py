@@ -35,7 +35,7 @@ def main():
                 })
 
     # 3. Write all predictions into a single JSON file
-    with open('../data/parsed/dependency_parsing/NumbersByDicta.json', 'w', encoding='utf-8') as out_file:
+    with open('../data/parsed/dependency_parsing/numbers_dep.json', 'w', encoding='utf-8') as out_file:
         json.dump(results, out_file, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":

@@ -137,6 +137,6 @@ if __name__ == "__main__":
         xml_path = os.path.join(directory, file_name)
 
     verses_data = process_shebanq_file(xml_path)
-output_file = os.path.join(directory, "Deuteronomy.json")
+output_file = os.path.join(directory, "deuteronomy_con.json")
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(verses_data, f, ensure_ascii=False, indent=2)
