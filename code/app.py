@@ -133,7 +133,7 @@ if __name__ == "__main__":
     else:
         # Provide defaults or exit with usage instructions
         directory = "."
-        file_name = "../Deuteronomy.xml"
+        file_name = "../data/raw/Deuteronomy.xml"
         xml_path = os.path.join(directory, file_name)
 
     verses_data = process_shebanq_file(xml_path)
