@@ -1,3 +1,11 @@
-# Default ignored files
+# Ignore all files in .idea except specific shared settings
+.idea/*
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/vcs.xml
+!.idea/natural-language.iml
+
+# Already ignored files
+/idea/.gitignore
 /shelf/
 /workspace.xml
