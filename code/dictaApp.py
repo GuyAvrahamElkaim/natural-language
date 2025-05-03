@@ -9,7 +9,7 @@ def main():
     model.eval()
 
     # 2. Parse the XML file
-    tree = ET.parse('Numbers.xml')  # or 'Deuteronomy.xml', etc.
+    tree = ET.parse('../Numbers.xml')  # or 'Deuteronomy.xml', etc.
     root = tree.getroot()
 
     book_name = 'Numbers'
@@ -35,7 +35,7 @@ def main():
                 })
 
     # 3. Write all predictions into a single JSON file
-    with open('NumbersByDicta.json', 'w', encoding='utf-8') as out_file:
+    with open('../NumbersByDicta.json', 'w', encoding='utf-8') as out_file:
         json.dump(results, out_file, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
