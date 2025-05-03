@@ -3,7 +3,7 @@ import pandas as pd
 import re
 
 # === Configuration ===
-input_xml_file = "genesis_DH.xml"  # change this to your file name
+input_xml_file = "../genesis_DH.xml"  # change this to your file name
 output_csv_file = "torah_sources.csv"
 book_name = "Genesis"  # change to "Exodus" etc. as needed
 
