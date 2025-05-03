@@ -4,12 +4,12 @@ from transformers import AutoModel, AutoTokenizer
 
 def main():
     # 1. Load the tokenizer/model
-    tokenizer = AutoTokenizer.from_pretrained('dicta-il/dictabert-tiny-joint')
-    model = AutoModel.from_pretrained('dicta-il/dictabert-tiny-joint', trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained('dependency_parsing-il/dictabert-tiny-joint')
+    model = AutoModel.from_pretrained('dependency_parsing-il/dictabert-tiny-joint', trust_remote_code=True)
     model.eval()
 
     # 2. Parse the XML file
-    tree = ET.parse('../Numbers.xml')  # or 'Deuteronomy.xml', etc.
+    tree = ET.parse('../data/raw/Numbers.xml')  # or 'Deuteronomy.xml', etc.
     root = tree.getroot()
 
     book_name = 'Numbers'
@@ -35,7 +35,7 @@ def main():
                 })
 
     # 3. Write all predictions into a single JSON file
-    with open('../NumbersByDicta.json', 'w', encoding='utf-8') as out_file:
+    with open('../data/parsed/dependency_parsing/NumbersByDicta.json', 'w', encoding='utf-8') as out_file:
         json.dump(results, out_file, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
