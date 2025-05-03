@@ -5,7 +5,5 @@
 !.idea/vcs.xml
 !.idea/natural-language.iml
 
-# Already ignored files
-/idea/.gitignore
 /shelf/
 /workspace.xml
