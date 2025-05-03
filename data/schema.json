@@ -1,0 +1,28 @@
+{
+    "verses": {
+        "version": "1.0",
+        "structure": {
+            "verse_id": "string",
+            "book": "string",
+            "chapter": "integer",
+            "verse": "integer",
+            "dh_sources": [
+                {
+                    "source": "string",
+                    "sub_verse_range": {
+                        "start": "float",
+                        "end": "float"
+                    }
+                }
+            ],
+            "statistics": {
+                "word_count": "integer",
+                "unique_words": "integer",
+                "dependency_depth": "integer",
+                "teamim_depth": "integer",
+                "constituency_clauses": "integer",
+                "teamim_clauses": "integer"
+            }
+        }
+    }
+}
